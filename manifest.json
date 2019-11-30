@@ -1,0 +1,26 @@
+{
+    "name": "World Offers",
+    "short_name": "World Offers",
+    "icons": [
+        {
+            "src": "images/b1.jpg",
+            "sizes": "255x291",
+            "type": "image/jpg"
+        },
+        {
+             "src": "images/b1.jpg",
+            "sizes": "255x291",
+            "type": "image/jpg"
+        },
+        {
+            "src": "images/b1.jpg",
+            "sizes": "255x291",
+            "type": "image/jpg"
+        }        
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#f0f2f5",
+    "theme_color": "#96f2d7"
+}
