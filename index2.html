@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Crysec info</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand" href="#">Crysec.info</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Partners</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Statistics</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Tutorials</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="scan">
+        <div class="jumbotron">
+            <h1>Verify Certificates Instantly!</h1>
+            <p>Paste the Certificate Code or Scan Now</p>
+            <video id="preview" style="Display:None"></video>
+            <form method="POST">
+            <p><input type="text" required="True" id="rqcode"><i class="fa fa-qrcode" onclick="runCamera();"></i></p>
+            <p><button class="btn btn-info" type = "submit" style="">Verify</button></p>
+        </form>
+        </div>
+    </div>
+    <div>
+        <div class="container results">
+            <h5>Verification Result:</h5>
+            <p><br>"reference_code": "123",<br> "currency": "EUR",<br> "amount": "105.55",<br> "amount_btc": "190",<br> "fee_btc": "1.9",<br> "exchange_rate_updated_at": "2013-06-20T15:23:01+00:00",<br> "advertisement": {<br><br></p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Total Verified</h5>
+                    <p>10 Certificates</p>
+					<p>500 Degrees</p>
+					<p>2 PhD</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Total Rejected</h5>
+                    <p>590</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Top 3 Verifications</h5>
+                    <p>JKUAT: 253</p>
+					<p>USIU: 215</p>
+					<p>STRATHMORE: 69</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/instascan.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function runCamera(){
+        let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+        scanner.addListener('scan', function (content) {
+        document.getElementById('qrcode').value = content;
+      });
+         Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+        }
+     
+    </script>
+</body>
+
+</html>
